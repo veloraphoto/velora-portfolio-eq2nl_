@@ -8,15 +8,17 @@
             --bg: #000000;
             --surface: #111111;
             --text: #ffffff;
-            --accent: #ffffff;
-            --muted: #555555;
+            --accent: #cccccc;
+            --muted: #aaaaaa;
         }
         
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg);
+            background-image: linear-gradient(to bottom, var(--bg), var(--surface));
+            background-attachment: fixed;
+            background-size: cover;
             color: var(--text);
             scroll-behavior: smooth;
         }
@@ -33,7 +35,7 @@
         
         header nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
         }
         
@@ -41,6 +43,7 @@
             color: var(--text);
             text-decoration: none;
             margin: 0 1rem;
+            font-family: 'Times New Roman', serif;
         }
         
         header nav a:hover {
@@ -50,17 +53,59 @@
         .hero {
             height: 100vh;
             width: 100%;
-            background-image: url(https://res.cloudinary.com/dblzw1rpg/image/upload/v1779989860/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/15UmoQvi3SasPObAPLzXe-7GhmlY4P9bz.jpg);
-            background-size: cover;
-            background-position: center;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
+            flex-direction: row;
+            background-image: linear-gradient(to bottom, #222222, #333333);
+            background-attachment: fixed;
+            background-size: cover;
         }
         
-        .hero h1 {
+        .hero .hero-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 2rem;
+            width: 40%;
+        }
+        
+        .hero .hero-left h1 {
             font-size: 3rem;
             color: var(--text);
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .hero .hero-left p {
+            font-size: 1.5rem;
+            color: var(--text);
+            max-width: 100%;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .hero .hero-right {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+        
+        .hero .hero-right img {
+            width: 20%;
+            height: 20%;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .hero-right p {
+            font-size: 1.2rem;
+            color: var(--text);
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
         }
         
         .gallery {
@@ -74,7 +119,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(1) contrast(1.4);
+            filter: grayscale(1) contrast(1) brightness(1);
             cursor: pointer;
         }
         
@@ -100,22 +145,15 @@
             object-fit: contain;
         }
         
-        .about {
-            padding: 2rem;
-        }
-        
-        .about p {
-            font-size: 1.2rem;
-            color: var(--muted);
-        }
-        
         .contact {
             padding: 2rem;
+            background-color: #222222;
         }
         
         .contact p {
             font-size: 1.2rem;
-            color: var(--muted);
+            color: var(--text);
+            font-family: 'Times New Roman', serif;
         }
         
         footer {
@@ -123,6 +161,7 @@
             padding: 1rem;
             text-align: center;
             color: var(--text);
+            font-family: 'Times New Roman', serif;
         }
         
         .overlay {
@@ -134,66 +173,72 @@
             background-color: transparent;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <a href="#home">Home</a>
             <a href="#gallery">Gallery</a>
-            <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
     <div class="hero" id="home">
-        <h1>pari photography</h1>
+        <div class="hero-left">
+            <h1>pari photography</h1>
+            <p>Capturing life's precious moments with passion and creativity</p>
+        </div>
+        <div class="hero-right" id="about">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/pari" loading="lazy" draggable="false" oncontextmenu="return false">
+            <p>Hello, I'm Pari, a passionate photographer with a love for capturing life's precious moments. I specialize in portrait, landscape, and travel photography, and I'm always looking for new ways to express my creativity and tell stories through my images.</p>
+        </div>
     </div>
     <div class="gallery" id="gallery">
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1EV3zz8JWxJ79avWVjYKuqU8wWrc374jI?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1EV3zz8JWxJ79avWVjYKuqU8wWrc374jI" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1LXkIbYoting1_HaQadrIKO75IeE-AV8H?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1LXkIbYoting1_HaQadrIKO75IeE-AV8H" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1t_aeM4IrSf7xDOxZvwyd8T9hY_FermPr?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1t_aeM4IrSf7xDOxZvwyd8T9hY_FermPr" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1689nW5NZbNbO6LhJGMTn-4TeQb63eXde?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1689nW5NZbNbO6LhJGMTn-4TeQb63eXde" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/15UmoQvi3SasPObAPLzXe-7GhmlY4P9bz?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/15UmoQvi3SasPObAPLzXe-7GhmlY4P9bz" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1ULxrpWaNynGflJu2kTk7kYIq60dG3SC2?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1ULxrpWaNynGflJu2kTk7kYIq60dG3SC2" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/12B5joA955ERAFpSWBUeneYKQuDoiDvsJ?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/12B5joA955ERAFpSWBUeneYKQuDoiDvsJ" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1WsFpazh8zWe7YS4TgJ-WdbQTpfKXVBGv?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1WsFpazh8zWe7YS4TgJ-WdbQTpfKXVBGv" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/18b2E8KOKmL4YbBajcFiH1TjUro5wBOU0?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/18b2E8KOKmL4YbBajcFiH1TjUro5wBOU0" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
         <div>
-            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/e_grayscale,e_contrast:60/co_white,g_south_east,l_text:Arial_18_bold:%C2%A9%20pari,o_55,x_15,y_15/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1eKK_1kp17QEvXAC-YvBm-eLu7HgIjLGc?_a=BAMAAAWQ0" loading="lazy" draggable="false" oncontextmenu="return false">
+            <img src="https://res.cloudinary.com/dblzw1rpg/image/upload/w_1200,c_limit,q_auto,f_jpg/v1/velora/7d08fd14-9454-4dbb-94fe-fafb8fdd5a3d/1eKK_1kp17QEvXAC-YvBm-eLu7HgIjLGc" loading="lazy" draggable="false" oncontextmenu="return false">
             <div class="overlay"></div>
         </div>
     </div>
     <div class="lightbox" id="lightbox">
         <img id="lightbox-image">
-    </div>
-    <div class="about" id="about">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
     </div>
     <div class="contact" id="contact">
         <p>Email: pari@example.com</p>
